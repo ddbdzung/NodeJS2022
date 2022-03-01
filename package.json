@@ -1,0 +1,25 @@
+{
+  "name": "nodejs_2022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "jsondb": "json-server --watch db.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ddbdzung/NodeJS_2022.git"
+  },
+  "author": "dzung",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ddbdzung/NodeJS_2022/issues"
+  },
+  "homepage": "https://github.com/ddbdzung/NodeJS_2022#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}
