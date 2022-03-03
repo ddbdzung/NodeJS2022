@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ddbdzung/NodeJS_2022#readme",
   "dependencies": {
     "express": "^4.17.3",
+    "mongoose": "^6.2.4",
     "nodemon": "^2.0.15"
   }
 }
