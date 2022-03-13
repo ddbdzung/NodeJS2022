@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { toJSON } = require('./plugins')
 
-const userSchema = mongoose.Schema(
+const User = new mongoose.Schema(
     {
       name: {
         type: String,
@@ -19,15 +19,21 @@ const userSchema = mongoose.Schema(
         minlength: 8,
         private: true // used by the toJSON plugin
       },
-      address: { type: String },
+      age: {
+        type: Number,
+      },
       gender: { type: String, enum: [0, 1], required: true },
-      status: { type: String, enum: [0, 1, 2], default: '1' }
+      role: {
+        type: String,
+        email: ['admin', 'user'],
+        default: 'user',
+      },
     },
     {
       timestamps: true
     }
 );
 
-const User = mongoose.model('User', userSchema, 'user');
+const UserSchema = mongoose.model('User', User, 'user');
 
-module.exports = User;
+module.exports = UserSchema;

@@ -1,0 +1,106 @@
+### /posts
+
+POST http://localhost:5000/posts/create/622de0a18d0f13289e1155d3
+Content-Type: application/json
+
+{
+    "userId": "622de0a18d0f13289e1155d3",
+    "post": {
+        "title": "postTitle4",
+        "content": "content4"
+    }
+}
+
+###
+
+GET http://localhost:5000/posts
+Content-Type: application/json
+
+{
+    "role": "user"
+}
+
+# {
+#     "role": "admin"
+# }
+
+###
+
+GET http://localhost:5000/posts/622de0a18d0f13289e1155d3
+
+### /users
+
+GET http://localhost:5000/users
+Content-Type: application/json
+
+# {
+#     "role": "admin"
+# }
+
+# {
+#     "role": "user"
+# }
+
+###
+
+GET http://localhost:5000/users/622dea6fc627a16ba1aa0dec
+
+###
+
+POST http://localhost:5000/users/create
+Content-Type: application/json
+
+{
+    "name": "h Con Vit",
+    "email": "vit@gmail.com",
+    "password": "hahaha321",
+    "gender": "0"
+}
+
+###
+
+PATCH http://localhost:5000/users/update/622dea6fc627a16ba1aa0dec
+Content-Type: application/json
+
+{
+    "age": "25"
+}
+
+###
+
+DELETE http://localhost:5000/users/delete/622de5658c89d769754c64a0
+Content-Type: application/json
+
+# {
+#     "role": "admin"
+# }
+
+{
+    "role": "user"
+}
+
+###
+
+GET http://localhost:5000/users/rangeAge
+Content-Type: application/json
+
+# {
+#     "role": "admin"
+# }
+
+{
+    "role": "user"
+}
+
+###
+
+GET http://localhost:5000/users/patternmatchname
+Content-Type: application/json
+
+# {
+#     "role": "admin"
+# }
+
+{
+    "role": "user"
+}

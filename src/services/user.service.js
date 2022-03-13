@@ -1,51 +1,45 @@
 const { User } = require('../models')
 
 const showAllUser = async () => {
-    try {
-        const users = await User.find({})
-        return users
-    } catch (err) {
-        return err.message
-    }
+    const users = await User.find({})
+    return users
 }
 
 const createANewUser = async (userBody) => {
-    try {
-        const user = await User.create(userBody)
-        return user
-    } catch (err) {
-        return err.message
-    }
+    const user = await User.create(userBody)
+    return user
 }
 
 const updateOneUser = async (userId, userBody) => {
-    try {
-        const user = await User.updateOne(
-            { _id: userId },
-            userBody,
-        )
-        return user
-    } catch (err) {
-        return err.message
-    }
+    const user = await User.updateOne(
+        { _id: userId },
+        userBody,
+    )
+    return user
 }
 
 const showUserById = async (userId) => {
-    try {
-        const user = await User.findById(userId)
-        return user
-    } catch (err) {
-        return err.message
-    }
+    const user = await User.findById(userId)
+    return user
 }
 
 const deleteUserById = async (userId) => {
-    try {
-        const user = await User.findByIdAndDelete(userId)
-        return user
-    } catch (err) {
-        return err.message
-    }
+    const user = await User.findByIdAndDelete(userId)
+    return user
+}
+
+const getUserWithAge = async (start, end) => {
+    start = parseInt(start)
+    end = parseInt(end)
+    const user = await User.find({
+        age: { $gt: start, $lte: end } 
+    })
+    return user
+}
+
+const getUserWithPatternMatchName = async (pattern) => {
+    const users = await User.find({ name: pattern })
+    return users
 }
 
 module.exports = {
@@ -54,4 +48,6 @@ module.exports = {
     updateOneUser,
     showUserById,
     deleteUserById,
+    getUserWithAge,
+    getUserWithPatternMatchName,
 }
