@@ -4,7 +4,7 @@ const Post = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user',
-        require: true,
+        required: true,
     },
     title: {
         type: String,
