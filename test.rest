@@ -104,3 +104,30 @@ Content-Type: application/json
 {
     "role": "user"
 }
+
+###
+
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+    "user": {
+        "id": "1",
+        "username": "babysocute",
+        "password": "helo"
+    }
+}
+
+###
+
+POST http://localhost:5000/shortenURL/create
+Content-Type: application/json
+
+{
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Il9pZCI6IjEiLCJ1c2VybmFtZSI6ImJhYnlzb2N1dGUiLCJwYXNzd29yZCI6ImhlbG8ifSwiaWF0IjoxNjQ3ODA3Njk5LCJleHAiOjE2NDc4MDc5OTl9.hYIjcENV4ZtUAZbvY4-sHmaM7BpIkvtdGrwrNIlsSEk",
+    "originalUrl": "https://www.facebook.com"
+}
+
+###
+
+GET http://localhost:5000/shortenURL/redirect/sfQL4wEk9

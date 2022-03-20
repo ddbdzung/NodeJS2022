@@ -11,8 +11,8 @@ let generateToken = (user, secretSignature, tokenLife) => {
         // Định nghĩa những thông tin của user mà bạn muốn lưu vào token ở đây
         const userData = {
             _id: user.id,
-            name: user.name,
-            email: user.email,
+            username: user.username,
+            password: user.password,
         }
         // Thực hiện ký và tạo token
         jwt.sign(
@@ -49,6 +49,6 @@ let verifyToken = (token, secretKey) => {
 }
 
 module.exports = {
-    generateToken,
-    verifyToken,
+    generateToken: generateToken,
+    verifyToken: verifyToken,
 }

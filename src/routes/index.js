@@ -4,6 +4,7 @@ const router = express.Router()
 const userRoute = require('./user.route')
 const postRoute = require('./post.route')
 const authRoute = require('./auth.route')
+const shortenURLRoute = require('./shortenURL.route')
 
 const defaultRoutes = [
     {
@@ -13,6 +14,10 @@ const defaultRoutes = [
     {
       path: '/auth',
       route: authRoute
+    },
+    {
+      path: '/shortenURL',
+      route: shortenURLRoute
     },
     {
       path: '/posts',
