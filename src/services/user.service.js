@@ -1,4 +1,6 @@
 const { User } = require('../models')
+const httpStatus = require('http-status');
+const ApiError = require('../utils/ApiError');
 
 const showAllUser = async () => {
     const users = await User.find({})
@@ -42,6 +44,30 @@ const getUserWithPatternMatchName = async (pattern) => {
     return users
 }
 
+/**
+ * Get a user by email
+ * @param {string} email
+ * @returns {Promise<User>}
+ */
+const getUserByEmail = async email => {
+    const user = await User.findOne({ email: email })
+    if (!user) {
+        throw new ApiError(httpStatus.UNAUTHORIZED, 'Incorrect email or password')
+    }
+
+    return user
+}
+
+const updateNewPassword = async (userId, password) => {
+    const user = await User.updateOne({
+        _id: userId,
+    }, {
+        password: password,
+    })
+
+    return user
+}
+
 module.exports = {
     createANewUser,
     showAllUser,
@@ -50,4 +76,6 @@ module.exports = {
     deleteUserById,
     getUserWithAge,
     getUserWithPatternMatchName,
+    getUserByEmail,
+    updateNewPassword,
 }

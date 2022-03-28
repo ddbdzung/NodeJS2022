@@ -1,23 +1,28 @@
 const mongoose = require('mongoose');
-const { toJSON } = require('./plugins')
+// const { toJSON } = require('./plugins')
 
 const User = new mongoose.Schema(
     {
       name: {
         type: String,
         required: true,
-        trim: true
+        trim: true,
       },
-      email: {
+      username: {
         type: String,
         required: true,
+        unique: true,
       },
       password: {
         type: String,
         required: true,
         trim: true,
-        minlength: 8,
-        private: true // used by the toJSON plugin
+        private: true, // used by the toJSON plugin
+      },
+      email: {
+        type: String,
+        required: true,
+        unique: true,
       },
       age: {
         type: Number,

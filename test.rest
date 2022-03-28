@@ -131,3 +131,37 @@ Content-Type: application/json
 ###
 
 GET http://localhost:5000/shortenURL/redirect/sfQL4wEk9
+
+###
+# Create new user
+
+POST http://localhost:5000/users/create
+Content-Type: application/json
+
+{
+    "name": "Đặng Đức Bảo Dũng",
+    "username": "dangdungvdl",
+    "password": "Kanade02",
+    "email": "ddbdzung.wa@gmail.com",
+    "gender": "1"
+}
+
+###
+# Forget password
+
+POST http://localhost:5000/auth/password-forget
+Content-Type: application/json
+
+{
+    "email": "ddbdzung.wa@gmail.com"
+}
+
+###
+# Reset password
+
+POST http://127.0.0.1:5000/auth/password-reset/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJJZCI6IjYyNDBlYmQ3YWNlZjkwMGQyNzBmZDE4MyJ9LCJpYXQiOjE2NDg0MzAyNTMsImV4cCI6MTY0ODQzMDU1M30.Jh2mOFS0VI1yYKWFgbwVq-9oC2TXq9w8cuqk7nYlWl8
+Content-Type: application/json
+
+{
+    "password": "newpasswordhihihi"
+}
